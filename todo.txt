@@ -1,0 +1,87 @@
+DEREK IN PROGRESS
+-----------------
+* adding structure class - DONE, but no destruction functionality
+
+
+CORE
+----
+
+* make wrapper class for vectors of units?
+	-> document UnitManager after
+
+* document GameLoop
+
+* Fix unit behavior so that clumps of units move properly (definitely has something to do with repathing) 
+	-> remove or rework repathing
+		-> only repath if the unit is stuck
+	-> lags in debug version
+	-> looks a little messyn in large groups
+	-> perhaps add some group movement stuff
+	-> allow them to pathfind to structures
+
+* AI improvements
+	-> fix reset issues
+	-> seperate functions for AI target chasing and finding
+	-> regular checks for closer targets
+	-> choose new target every round?
+
+* remove code duplication and clean code
+	-> unit manager is in need of some work
+	-> the event loop is starting to get messy with all the game states flying around
+
+* add more subclasses for different units
+
+* make game settings centralized (such as scroll speed) and easy to change
+	-> should they be in a file outside the code?
+
+* improve maps
+	-> allow them to have more tile types
+	-> maybe make a unique file type
+	-> make it easier to make and change them
+
+* display options
+	-> add fullscreen option in game (in code just need to add flag to SDL_CreateWindow)
+	-> add zoom in and out
+	-> add resolution options (SDL_WINDOW_FULLSCREEN_DESKTOP is a useful flag)
+
+* add button to start screen (new button class?)
+
+* add win/lose condition and game over trigger (simple--all units dead)
+
+GRAPHICAL
+---------
+* indicate move and attack commands with visual response
+
+* make cursor for in game
+
+* make health bars always top layer
+
+* implement better line drawing algorithm for more versatility (like dda)
+
+* improve units
+	-> perhaps change selection circles to be nicer (research other games)
+	-> add a gradual walking animation instead of tile by tile jumps
+	-> add sprites for dead and bloodied units
+	-> nicer health bars
+
+* add a GUI
+
+* proper tileset
+
+DEBUG
+-----
+* fix delay at start of match - DONE?
+
+* unit starting in the top left (right?) corner of map breaks game
+
+* make some unit tests for various classes
+
+EXTERNAL
+--------
+* make image that shows the overall heirarchy of code
+
+ADDITIONAL
+----------
+* add reset to Timer
+
+
