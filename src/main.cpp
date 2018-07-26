@@ -137,14 +137,14 @@ xypair convertActualToMapLoc(int x, int y);
 
 /* filenames */
 #define MAPNAME "data/structureTest.txt"
-#define SPRITES "data/allSprites.bmp"
+#define SPRITES "data/allsprites.bmp"
 
 /* Window resolution */
 #define WINDOW_WIDTH 1024
 #define WINDOW_HEIGHT 768
 
 /* Window title */
-#define WINDOW_TITLE "Goblin Defense Game"
+#define WINDOW_TITLE "Project Ugly Goblin"
 
 enum screenStates {MAINMENU, LOADING, MATCH, QUIT};
 
@@ -188,7 +188,7 @@ int main(int argc, char* args[])
         }
 
         SDL_Surface *image = NULL;
-        image = SDL_LoadBMP(SPRITES);
+        image = SDL_LoadBMP(SPRITES); // TODO: add error checking in case the file name is wrong
 
         spriteSrcLoc bitmapLocs[6];
         initSpriteLocs(bitmapLocs, 6);
@@ -196,14 +196,18 @@ int main(int argc, char* args[])
         SDL_Surface *buffer = NULL;
 
         Blitter blitter(bitmapLocs, image, buffer, screen, font, WINDOW_WIDTH, WINDOW_HEIGHT);
-        blitter.setTransparentColor(SDL_TRUE, 255, 0, 255);
 
+        blitter.setTransparentColor(SDL_TRUE, 255, 0, 255); 
+        
         GameMap gmap;
         Camera camera(WINDOW_WIDTH, WINDOW_HEIGHT, 10);
         Timer timer(WINDOW_WIDTH, WINDOW_HEIGHT);
 
+
         int screenState = MAINMENU;
         bool running = true;
+
+
         while(running)
         {
             switch (screenState)
@@ -426,7 +430,7 @@ void handleMouseUp(SDL_Event *event, GameMap *gmap, Camera *camera, xypair *left
                 {
                     selectUnits(toBeSelected, gmap);
                 }
-                else if (unitSelected == false)
+                else if (*unitSelected == false)
                 {
                     *unitSelected = true;
                     gmap->deselect(-1, -1);
