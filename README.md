@@ -8,7 +8,8 @@
  - Camera scrolling across the map
  
  How to build:
- - A makefile is included to build the executable. Use the command `make all` to build.
+ - A makefile is included to build the executable. 
+ - Use the command `make all` to build.
  
  Contributions:
  - This is a personal project and no outside contirubtions are welcomed at this time. 
