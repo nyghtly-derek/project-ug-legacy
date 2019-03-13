@@ -4,8 +4,8 @@
 //#define PRINT_INFO
 //#define DRAW_INFO
 
-#include <SDL.h>
-#include <SDL_ttf.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 
 #include <stack>
 #include <vector>
