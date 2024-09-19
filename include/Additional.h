@@ -97,7 +97,7 @@ struct pntCmpFn
 
 struct nodeCmpFn
 {
-    bool operator() (node one, node two)
+    bool operator() (node one, node two) const
     {
         if ( one.x < two.x )
             return true;
