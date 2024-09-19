@@ -15,7 +15,8 @@
                     name = "play-gdg";
                     src = ./.;
                     nativeBuildInputs = with pkgs; [
-                        gnumake 
+                        gnumake
+                        makeWrapper
                         (if pkgs.stdenv.isDarwin then clang else gcc)
                     ];
                     buildInputs = with pkgs; [
@@ -30,6 +31,7 @@
                         mkdir -p $out/bin
                         mv play-gdg $out/bin
                         cp -r data $out/data
+                        wrapProgram $out/bin/play-gdg --chdir $out
                     '';
                 };
             };
