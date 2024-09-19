@@ -78,7 +78,7 @@ struct node
 
 struct pntCmpFn
 {
-    bool operator() (xypair one, xypair two)
+    bool operator() (xypair one, xypair two) const
     {
         if ( one.x < two.x )
             return true;
