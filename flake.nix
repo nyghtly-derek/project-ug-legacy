@@ -17,14 +17,14 @@
                     nativeBuildInputs = with pkgs; [
                         gnumake
                         makeWrapper
-                        (if pkgs.stdenv.isDarwin then clang else gcc)
+                        clang
                     ];
                     buildInputs = with pkgs; [
                         SDL2
                         SDL2_ttf
-                    ];
+                    ]; 
                     buildPhase = ''
-                        ${if pkgs.stdenv.isDarwin then "export CC=clang++" else "export CC=g++"}
+                        export CC=clang++
                         make all
                     '';
                     installPhase = ''

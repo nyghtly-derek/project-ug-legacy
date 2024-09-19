@@ -2,8 +2,8 @@
 SRC = $(wildcard src/*.cpp)
 HEADER = $(wildcard include/*.h)
 
-#CC specifies which compiler we're using, we default to g++
-CC ?= g++
+#CC specifies which compiler we're using, we default to clang++
+CC ?= clang++
 
 #COMPILER_FLAGS specifies the additional compilation options we're using
 # -w suppresses all warnings
